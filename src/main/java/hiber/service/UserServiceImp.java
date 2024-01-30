@@ -17,19 +17,19 @@ public class UserServiceImp implements UserService {
 
     @Transactional
     @Override
-    public void add(User user) {
-        userDao.add(user);
+    public void addUser(User user) {
+        userDao.addUser(user);
     }
 
     @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     @Override
-    public List<User> listUsers() {
-        return userDao.listUsers();
+    public List<User> getListUsers() {
+        return userDao.getListUsers();
     }
 
     @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     @Override
-    public List<User> findUserById(String model, int series) {
-        return userDao.findUserById(model, series);
+    public List<User> findUsersListByModelAndSeriesCar(String model, int series) {
+        return userDao.findUsersListByModelAndSeriesCar(model, series);
     }
 }
